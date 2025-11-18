@@ -324,8 +324,15 @@ def main(is_sim):
             waypoints.append((0.0 + i, waypoint))
 
         t0 = time.clock()
-        traj =  ada.compute_joint_space_path(
+
+        # Question 3
+        # traj =  ada.compute_joint_space_path(
+        #     ada.get_arm_state_space(), waypoints)
+
+        # Question 4
+        traj = ada.compute_smooth_joint_space_path(
             ada.get_arm_state_space(), waypoints)
+
         t = time.clock() - t0
         print(str(t) + "seconds elapsed")
         raw_input('Press ENTER to execute trajectory and exit')
