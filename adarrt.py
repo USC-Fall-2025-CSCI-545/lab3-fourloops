@@ -60,8 +60,11 @@ class AdaRRT():
                  joint_upper_limits=None,
                  ada_collision_constraint=None,
                  step_size=0.25,
-                 goal_precision=1,
-                #  goal_precision=0.2,
+                #  Question 3 and 4
+                #  goal_precision=1,
+
+                # Question 5
+                 goal_precision=0.2,
                  max_iter=10000):
         """
         :param start_state: Array representing the starting state.
@@ -107,12 +110,13 @@ class AdaRRT():
         """
         for k in range(self.max_iter):
             # finish the sampling, finding nearest neighbor, and creating a new node
-            # for question 5:
-            # if np.random.rand()<0.2:
-            #     random_point=self._get_random_sample_near_goal(radius=0.05)
-            # else:
-            #     random_point=self._get_random_sample()
-            random_point=self._get_random_sample()
+            # Question 5:
+            if np.random.rand()<0.2:
+                random_point=self._get_random_sample_near_goal(radius=0.05)
+            else:
+                random_point=self._get_random_sample()
+            # Question 3 and 4:
+            # random_point=self._get_random_sample()
             nearest=self._get_nearest_neighbor(random_point)
             new_node=self._extend_sample(random_point,nearest)
 
@@ -329,7 +333,7 @@ def main(is_sim):
         # traj =  ada.compute_joint_space_path(
         #     ada.get_arm_state_space(), waypoints)
 
-        # Question 4
+        # Question 4 and 5
         traj = ada.compute_smooth_joint_space_path(
             ada.get_arm_state_space(), waypoints)
 
