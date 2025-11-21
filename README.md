@@ -10,4 +10,4 @@ In Lab 3, both Python 2 and Python 3 versions of the script are already included
 
 The Lab 3 simulation supports both Python 2 and Python 3 implementations; however, the real-world lab only supports Python 2.
 
-Our implementation of adarrt.py is located in the root directory of this repository. We have not modified the file inside adarrt/src. Please grade the adarrt.py found in the root please.
+Our implementation of adarrt.py is located in the root directory of this repository. We have not modified the file inside adarrt/src. Please grade the adarrt.py found in the root.
